@@ -1,3 +1,5 @@
+val circeVersion = "0.10.0"
+
 lazy val `spotify-gdpr` = (project in file("."))
   .settings(
     organization := "com.ikempf",
@@ -6,7 +8,10 @@ lazy val `spotify-gdpr` = (project in file("."))
     scalacOptions += "-Ypartial-unification",
     libraryDependencies ++= List(
       "org.typelevel"         %% "cats-core" % "1.4.0",
-      "com.softwaremill.sttp" %% "core"      % "1.5.1",
+      "com.softwaremill.sttp" %% "core" % "1.5.1",
+      "io.circe"              %% "circe-core" % circeVersion,
+      "io.circe"              %% "circe-generic" % circeVersion,
+      "io.circe"              %% "circe-parser" % circeVersion,
       "org.scalatest"         %% "scalatest" % "3.0.5" % Test
     ),
     addCompilerPlugin("org.spire-math" %% "kind-projector" % "0.9.8"),
